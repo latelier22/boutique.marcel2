@@ -1,0 +1,75 @@
+{
+    "name": "sylius/shop-bundle",
+    "type": "symfony-bundle",
+    "description": "Sylius eCommerce storefront.",
+    "keywords": [
+        "shop",
+        "ecommerce",
+        "store",
+        "webshop",
+        "sylius"
+    ],
+    "homepage": "https://sylius.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Paweł Jędrzejewski",
+            "homepage": "https://pjedrzejewski.com"
+        },
+        {
+            "name": "Sylius project",
+            "homepage": "https://sylius.com"
+        },
+        {
+            "name": "Community contributions",
+            "homepage": "https://github.com/Sylius/Sylius/contributors"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "sylius/core-bundle": "^2.0",
+        "sylius/payum-bundle": "^2.0",
+        "sylius/twig-hooks": "^0.6",
+        "sylius/ui-bundle": "^2.0",
+        "sylius/theme-bundle": "^2.4",
+        "symfony/framework-bundle": "^6.4.1 || ^7.1",
+        "symfony/security-bundle": "^6.4 || ^7.1",
+        "symfony/webpack-encore-bundle": "^2.2",
+        "symfonycasts/dynamic-forms": "^0.1",
+        "twig/twig": "^3.14"
+    },
+    "require-dev": {
+        "matthiasnoback/symfony-config-test": "^5.1",
+        "matthiasnoback/symfony-dependency-injection-test": "^5.1",
+        "mockery/mockery": "^1.6",
+        "phpspec/phpspec": "^7.5",
+        "phpunit/phpunit": "^9.5",
+        "symfony/dependency-injection": "^6.4.1 || ^7.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/flex": true
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "2.0-dev"
+        },
+        "symfony": {
+            "require": "^7.1"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Sylius\\Bundle\\ShopBundle\\": ""
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../*/*"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

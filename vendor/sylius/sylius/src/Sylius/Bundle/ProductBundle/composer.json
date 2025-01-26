@@ -1,0 +1,83 @@
+{
+    "name": "sylius/product-bundle",
+    "type": "symfony-bundle",
+    "description": "Product catalog for your Symfony applications.",
+    "keywords": [
+        "shop",
+        "ecommerce",
+        "products",
+        "product",
+        "assortment"
+    ],
+    "homepage": "https://sylius.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Paweł Jędrzejewski",
+            "homepage": "https://pjedrzejewski.com"
+        },
+        {
+            "name": "Sylius project",
+            "homepage": "https://sylius.com"
+        },
+        {
+            "name": "Community contributions",
+            "homepage": "https://github.com/Sylius/Sylius/contributors"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "stof/doctrine-extensions-bundle": "^1.12",
+        "sylius/attribute-bundle": "^2.0",
+        "sylius/locale-bundle": "^2.0",
+        "sylius/product": "^2.0",
+        "sylius/resource-bundle": "^1.12",
+        "symfony/framework-bundle": "^6.4.1 || ^7.1"
+    },
+    "require-dev": {
+        "doctrine/doctrine-bundle": "^2.13",
+        "doctrine/orm": "^2.18",
+        "matthiasnoback/symfony-dependency-injection-test": "^5.1",
+        "mockery/mockery": "^1.6",
+        "phpspec/phpspec": "^7.5",
+        "phpunit/phpunit": "^9.5",
+        "symfony/browser-kit": "^6.4 || ^7.1",
+        "symfony/dependency-injection": "^6.4.1 || ^7.1",
+        "symfony/form": "^6.4.1 || ^7.1",
+        "symfony/validator": "^6.4 || ^7.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/flex": true
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "2.0-dev"
+        },
+        "symfony": {
+            "require": "^7.1"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Sylius\\Bundle\\ProductBundle\\": ""
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sylius\\Bundle\\ProductBundle\\spec\\": "spec/"
+        },
+        "classmap": [
+            "test/app/AppKernel.php"
+        ]
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../*/*"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

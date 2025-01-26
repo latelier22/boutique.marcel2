@@ -1,0 +1,86 @@
+{
+    "name": "sylius/admin-bundle",
+    "type": "symfony-bundle",
+    "description": "Sylius eCommerce administration panel component.",
+    "keywords": [
+        "shop",
+        "ecommerce",
+        "store",
+        "webshop",
+        "sylius",
+        "ui",
+        "admin interface",
+        "admin",
+        "backend"
+    ],
+    "homepage": "https://sylius.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Paweł Jędrzejewski",
+            "homepage": "https://pjedrzejewski.com"
+        },
+        {
+            "name": "Sylius project",
+            "homepage": "https://sylius.com"
+        },
+        {
+            "name": "Community contributions",
+            "homepage": "https://github.com/Sylius/Sylius/contributors"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "knplabs/knp-menu": "^3.5",
+        "knplabs/knp-menu-bundle": "^3.4",
+        "sylius/core-bundle": "^2.0",
+        "sylius/payum-bundle": "^2.0",
+        "sylius/ui-bundle": "^2.0",
+        "sylius/twig-hooks": "^0.6",
+        "symfony/framework-bundle": "^6.4.1 || ^7.1",
+        "symfony/stimulus-bundle": "^2.20",
+        "symfony/ux-autocomplete": "^2.20",
+        "symfony/ux-live-component": "^2.20",
+        "symfony/webpack-encore-bundle": "^2.2",
+        "symfonycasts/dynamic-forms": "^0.1",
+        "twig/extra-bundle": "^3.13",
+        "twig/twig": "^3.14"
+    },
+    "require-dev": {
+        "matthiasnoback/symfony-dependency-injection-test": "^5.1",
+        "php-http/message-factory": "^1.1",
+        "phpspec/phpspec": "^7.5",
+        "phpspec/prophecy-phpunit": "^2.2",
+        "phpunit/phpunit": "^9.5",
+        "symfony/dependency-injection": "^6.4.1 || ^7.1",
+        "symfony/dotenv": "^6.4 || ^7.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/flex": true
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "2.0-dev"
+        },
+        "symfony": {
+            "require": "^7.1"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Sylius\\Bundle\\AdminBundle\\": "",
+            "Sylius\\Bundle\\AdminBundle\\Tests\\": "Tests/",
+            "Sylius\\Bundle\\AdminBundle\\Application\\": "test/src/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../*/*"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
