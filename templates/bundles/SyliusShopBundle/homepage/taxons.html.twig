@@ -1,0 +1,38 @@
+<div class="container mb-6">
+    <h2 class="mb-5">Catégories</h2>
+
+    <div data-test-latest-taxons="">
+        <div class="products-grid">
+            {% set flat_taxons = [] %}
+            {% for taxon in taxons %}
+                {% set flat_taxons = flat_taxons|merge([taxon]) %}
+                {% set flat_taxons = flat_taxons|merge(taxon.children) %}
+            {% endfor %}
+
+            {% for taxon in flat_taxons %}
+                {% set show_image = taxon.images|filter(image => image.type == 'SHOW')|first %}
+                {% if show_image and show_image.path %}
+                    <div>
+                        <div data-test-taxon="{{ taxon.slug }}">
+                            <a class="link-reset" href="{{ path('sylius_shop_product_index', {'slug': taxon.slug}) }}" data-test-taxon-content="">
+                                <div class="mb-4">
+                                    <div class="overflow-auto bg-light rounded-3" style="aspect-ratio: 3/4;">
+                                        <img class="img-fluid w-100 h-100 object-fit-cover"
+                                             src="{{ asset(show_image.path|imagine_filter('sylius_shop_product_thumbnail')) }}"
+                                             alt="{{ taxon.name }}">
+                                    </div>
+                                </div>
+                                <div class="h6 text-break" data-test-taxon-name="{{ taxon.name }}">
+                                    {{ taxon.name }}
+                                </div>
+                            </a>
+                            <div>
+                                {# Ajoutez un texte ou un détail supplémentaire ici si nécessaire, par exemple une description du taxon. #}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

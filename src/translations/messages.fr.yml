@@ -1,0 +1,6 @@
+# This file is part of the Sylius package.
+# (c) Sylius Sp. z o.o.
+
+sylius:
+    top_bar: 'VISITEZ le site www.marcel-de-mayotte pour découvrir tous les tableaux de l''artiste'
+

@@ -1,0 +1,14 @@
+{
+    "name": "cyrille/marcel-theme",
+    "authors": [
+        {
+            "name": "James Potter",
+            "email": "prongs@example.com"
+        }
+    ],
+    "extra": {
+        "sylius-theme": {
+            "title": "Marcel Theme"
+        }
+    }
+}

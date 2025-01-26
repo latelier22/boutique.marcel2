@@ -1,0 +1,42 @@
+{% set variant = hookable_metadata.context.variant|default(null) %}
+
+{% if variant is not null %}
+    {% set has_discount = variant|sylius_has_discount({'channel': sylius.channel}) %}
+    {% set days = sylius.channel.channelPriceHistoryConfig.lowestPriceForDiscountedProductsCheckingPeriod %}
+    {% set has_lowest_price = variant|sylius_has_lowest_price({'channel': sylius.channel}) %}
+    <div class="mb-3">
+        <p>Nom du variant : {{ variant.name }}</p>
+        <p>ID du variant : {{ variant.id }}</p>
+        
+        <p>Images du variant :</p>
+        <ul>
+            {% for image in variant.images %}
+                <li>
+                    ID de l'image : {{ image.id }}
+                    {% if image.path is defined %}
+                        <a href="{{ image.path|imagine_filter('sylius_shop_product_original') }}" class="d-block overflow-auto bg-light rounded-3 spotlight">
+                            <img src="{{ image.path|imagine_filter('sylius_shop_product_thumbnail') }}"
+                                 data-large-thumbnail="{{ image.path|imagine_filter('sylius_shop_product_large_thumbnail') }}"
+                                 alt="Image du variant {{ variant.name }}" 
+                                 class="img-fluid w-100 h-100 object-fit-cover"
+                                 style="max-width: 300px; max-height: 300px;" />
+                        </a>
+                    {% else %}
+                        Aucune miniature disponible.
+                    {% endif %}
+                </li>
+            {% else %}
+                <li>Aucune image disponible pour ce variant.</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="mb-3 pb-1">
+
+    PRIX
+        {% hook 'prices' with { variant, has_discount, has_lowest_price, days } %}
+    </div>
+{% else %}
+    <div class="mb-3 pb-1" {{ sylius_test_html_attribute('product-price', 'sylius.ui.unavailable'|trans ) }}>
+        {{ 'sylius.ui.unavailable'|trans }}
+    </div>
+{% endif %}

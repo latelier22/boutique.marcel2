@@ -1,0 +1,16 @@
+{% extends '@SyliusShop/shared/layout/base.html.twig' %}
+
+
+{% block title %}
+    {{ 'sylius.ui.contact_us'|trans }} | {{ parent() }}
+     
+{% endblock %}
+
+
+
+{% block content %}
+   
+    {% form_theme form '@SyliusShop/form/theme.html.twig' %}
+    {% hook 'sylius_shop.contact.contact_request' with { form } %}
+    {# Add your form or other content here #}
+{% endblock %}

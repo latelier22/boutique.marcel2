@@ -1,0 +1,14 @@
+{% set taxon = hookable_metadata.context.taxon %}
+
+{# Filtrer les images où type = 'BANNER' #}
+{% set show_images = taxon.images|filter(image => image.type == 'BANNER') %}
+
+{% if show_images|length > 0 %}
+    <div class="mb-5">
+        {# Afficher la première image avec type = 'SHOW' #}
+        <img src="{{ asset(show_images|first.path|imagine_filter('sylius_shop_taxon_thumbnail')) }}"
+             alt="{{ taxon.name }}"
+             class="img-fluid"
+        >
+    </div>
+{% endif %}
