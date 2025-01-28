@@ -1,6 +1,8 @@
 <div class="container mb-6">
     <h2 class="mb-5">CATEGORIES</h2>
-
+    <div {{ react_component('Hello', { fullName: 'Fabien' }) }}>
+        Loading... <i class="fas fa-cog fa-spin fa-3x"></i>
+    </div>
     <div data-test-latest-taxons="">
         <div class="products-grid">
             {% set flat_taxons = [] %}
@@ -36,3 +38,4 @@
         </div>
     </div>
 </div>
+

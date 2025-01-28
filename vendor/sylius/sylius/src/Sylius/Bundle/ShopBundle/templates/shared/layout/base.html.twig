@@ -37,6 +37,7 @@
 
         {% block javascripts %}
             {% hook '#javascripts' with { _prefixes: prefixes } %}
+            {{ encore_entry_script_tags('react-entry', null, 'app.shop') }}
         {% endblock %}
     </body>
 </html>

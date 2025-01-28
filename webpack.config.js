@@ -19,11 +19,14 @@ Encore
     .addEntry('app-shop-entry', './assets/shop/entrypoint.js')
     .addEntry('theme', './themes/MarcelTheme/public/scss/main.scss')
     .addEntry('variant-switcher', './themes/MarcelTheme/public/js/variant-image-switcher.js')
+    .addEntry('react-entry', './assets/app.js')
     .disableSingleRuntimeChunk()
     .cleanupOutputBeforeBuild()
     .enableSourceMaps(!Encore.isProduction())
     .enableVersioning(Encore.isProduction())
-    .enableSassLoader();
+    .enableSassLoader()
+    .enableReactPreset();
+    
 
 const appShopConfig = Encore.getWebpackConfig();
 
